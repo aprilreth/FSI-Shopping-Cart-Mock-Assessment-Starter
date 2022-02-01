@@ -2,7 +2,7 @@ let body = document.querySelector('body')
 let totalQuantity = 1 
 let totalCost = 16.00
 
-let costTotal = document.createElement('span')
+var costTotal = document.createElement('span')
 costTotal.setAttribute('id', 'total-cost')
 costTotal.textContent = totalCost
 
@@ -55,10 +55,6 @@ checkOut = document.addEventListener('click', function(){
 let cost = document.createElement('div')
 cost.setAttribute('id', 'cost')
 cost.setAttribute('style', 'display: none')
-
-let costTotal = document.createElement('span')
-costTotal.setAttribute('id', 'total-cost')
-costTotal.textContent = totalCost
 
 body.append(cost)
 cost.append(costTotal)
