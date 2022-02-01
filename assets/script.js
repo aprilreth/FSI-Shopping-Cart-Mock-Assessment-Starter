@@ -1,10 +1,12 @@
 let body = document.querySelector('body')
-let totalQuantity = 1 
-let totalCost = 16.00
+let totalQuantity = 0 
+let totalCost = 0
 
 var costTotal = document.createElement('span')
 costTotal.setAttribute('id', 'total-cost')
 costTotal.textContent = totalCost
+
+var itemCost = 16.00
 
 //Update Quantity
 function changeQuantity(displayQuantity) {
@@ -16,27 +18,27 @@ function changeQuantity(displayQuantity) {
 addQuantity = document.getElementById('quantity-up')
 addQuantity.addEventListener('click', function(){
     totalQuantity = totalQuantity + 1
-    changeQuantity('Quantity: ${totalQuantity}')
-    totalCost += 1
+    changeQuantity('Quantity: ' + totalQuantity)
+    totalCost = itemCost*totalQuantity
     costTotal.textContent = totalCost
 })
 
-//quality up
+//quality down
 quantityDown = document.getElementById('quantity-down')
 quantityDown.addEventListener('click', function(){
     if(totalCost > 1){
-    totalQuantity = totalQuantity - 1
-    totalCost -= 1
-    costTotal.textContent = totalCost
-    }
-    changeQuantity('Quantity: ${totalQuantity}')
+        totalQuantity = totalQuantity - 1
+        totalCost = itemCost*totalQuantity
+        costTotal.textContent = totalCost
+    } 
+    changeQuantity('Quantity: ' + totalQuantity)
 })
 
 //remove button
 let removeBtn = document.createElement('.remove')
 removeBtn.addEventListener('click', function(){
-    totalQuantity = 1
-    changeQuantity('Quantity: ${totalQuantity}')
+    totalQuantity = 0
+    changeQuantity('Quantity: ' + totalQuantity)
 })
 
 //checkout Hide Button
