@@ -23,7 +23,7 @@ addQuantity.addEventListener('click', function(){
     costTotal.textContent = totalCost
 })
 
-//quality down
+//quantity down
 quantityDown = document.getElementById('quantity-down')
 quantityDown.addEventListener('click', function(){
     if(totalCost > 1){
@@ -35,7 +35,7 @@ quantityDown.addEventListener('click', function(){
 })
 
 //remove button
-let removeBtn = document.createElement('.remove')
+let removeBtn = document.getElementById('.remove')
 removeBtn.addEventListener('click', function(){
     totalQuantity = 0
     changeQuantity('Quantity: ' + totalQuantity)
